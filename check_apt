@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+input=$HOME"/packages"
+STATUS=''
+while IFS= read -r line
+do
+  sudo apt show ^$line$ > /dev/null
+  STATUS=$?
+  [ $STATUS -eq 0 ] && echo $line "exist" || echo $line "not found"
+done < "$input"

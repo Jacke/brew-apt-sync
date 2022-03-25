@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+input=$HOME"/Brewfile"
+regex='brew ".*$'
+while IFS= read -r line
+do
+    if [[ $line =~ $regex ]]
+    then
+        echo $line | rg -o '(?:brew ")(.*)(?:"$)' -r '$1'
+    fi
+done < "$input"
+
