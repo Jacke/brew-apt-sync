@@ -1,0 +1,12 @@
+---
+brew:
+  last_synced: 0
+  total: 0
+apt:
+  last_synced: 0
+  total: 0
+packages:
+- name: btop
+  description: Resource monitor. C++ version and continuation of bashtop and bpytop
+  apt_id: btop
+  brew_id: btop

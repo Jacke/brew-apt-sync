@@ -2,11 +2,12 @@
 
 input=$HOME"/Brewfile"
 regex='brew ".*$'
+regex_final='(?<=^brew.\")(.+\/.+\/)?\K[\w\-]*(?=\")'
 while IFS= read -r line
 do
     if [[ $line =~ $regex ]]
     then
-        echo $line | rg -o '(?:brew ")(.*)(?:"$)' -r '$1'
+        echo $line | rg -o --pcre2 $regex_final #-r '$1 $2'
     fi
 done < "$input"
 

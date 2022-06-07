@@ -1,0 +1,20 @@
+- Make prototype:
+* scan (setup brew apt packages file)
+* generate universal package + find it from repository
+* package (create universal package script+launch script)
+
+## scan
+Detect os and run import packages
+
+## ir packages
+Upsert YAML package list and synchronize it with remote repository
+
+## package
+Create zip with shell script to install packages
+
+———-
+Add improvement plan:
+* Online packages collections
+* Integration with shell and docker and Iam project
+
+- Update the https://www.notion.so/sperad0x/apt-brew-sync-fc97354e0a5647f188fadcf51ec00e2c
